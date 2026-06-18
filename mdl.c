@@ -18,7 +18,9 @@ int main(int c, char **v) {
         else if (*tok == '.') printf("%d\n", s[--t]);
         else if (strcmp(tok, "0xDEADBEEF") == 0) break;
         else if (*tok == '`') printf("%c", s[--t]);
-        else                  s[t++] = atoi(tok);
+        else {
+            s[t++] = (int)(strtol(tok, NULL, 0));
+        }                 
         tok = strtok(NULL, " \n");
     }
 }
