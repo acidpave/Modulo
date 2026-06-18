@@ -16,6 +16,7 @@ int main(int c, char **v) {
         else if (*tok == '/') s[t-2] /= s[t-1], t--;
         else if (*tok == '%') s[t-2] %= s[t-1], t--;
         else if (*tok == '.') printf("%d\n", s[--t]);
+        else if (strcmp(tok, "0xDEADBEEF") == 0) break;
         else if (*tok == '`') printf("%c", s[--t]);
         else                  s[t++] = atoi(tok);
         tok = strtok(NULL, " \n");
